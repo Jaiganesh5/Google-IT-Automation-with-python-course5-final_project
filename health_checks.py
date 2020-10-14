@@ -40,12 +40,14 @@ def health_check():
 
 
 def send_report(subject):
+  """ generate the email template"""
   sender = "automation@example"
   receiver = "<user>@example.com"
   subject = subject
   body = "Please check your system and resolve the issue as soon as possible."
   message = emails.generate_error_report(sender,receiver,subject,body)
 
+  """ Send the email """
   emails.send(message)
 
 

@@ -6,7 +6,6 @@ url = "http://localhost/fruits/"
 total_data = []
 for files in os.listdir(os.getcwd()+"/supplier-data/descriptions"):
   for img_files in os.listdir(os.getcwd()+"/supplier-data/images"):
-    #print(files,img_files)
     des_file, de = os.path.splitext(files)
     img_file, ie = os.path.splitext(img_files)
     if des_file == img_file and ie == ".jpeg":
