@@ -4,6 +4,8 @@ from reportlab.platypus import Paragraph, Spacer, Image
 from reportlab.lib.styles import getSampleStyleSheet
 
 def generate_report(filename, title, body):
+
+  """ generates the pdf using reportlab module"""
   styles = getSampleStyleSheet()
   report = SimpleDocTemplate(filename)
   report_title = Paragraph(title,styles["h1"])

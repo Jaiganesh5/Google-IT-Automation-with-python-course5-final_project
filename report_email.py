@@ -5,6 +5,8 @@ import os
 import datetime
 import json
 def generate_report():
+  """ create the template of the body attach to the mail"""
+
   body = ""
   with open(os.getcwd()+"/supply_data.json" ,"r") as file:
     data = json.load(file)
@@ -13,6 +15,8 @@ def generate_report():
   return body
 
 def generate_date():
+  """returns date, month and year"""
+
   today = datetime.datetime.now()
   day = today.day
   month = today.strftime("%B")
@@ -23,10 +27,10 @@ if __name__ == '__main__':
   paragraph = generate_report()
   day, month, year = generate_date()
 
-  """Generate pdf of the supplied data"""
+  #Generate pdf of the supplied data
   reports.generate_report("/tmp/processed.pdf","Processed Update on {} {}, {}".format(month,day,year),paragraph)
 
-  """Generate email to the supplier"""
+  #Generate email to the supplier
   sender = "automation@example.com"
   receiver = "<user>@example.com"
   subject = "Upload Completed - Online Fruit Store"
@@ -34,6 +38,6 @@ if __name__ == '__main__':
   attachment = "/tmp/processed.pdf"
   message = emails.generate_email(sender,receiver,subject,body,attachment)
 
-  """send email to the supplier"""
+  #send email to the supplier
   emails.send(message)
 
