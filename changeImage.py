@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""To convert images into ".jpeg" files and resize it"""
 import os
 from PIL import Image
+
+#To convert images into ".jpeg" files and resize it
 directory = os.getcwd()+"/supplier-data/images"
 for file in os.listdir(directory):
   filename, extension = os.path.splitext(file)

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import requests
 import os
-""" To post the image files in the API endpoint using requests module"""
+
+
+# To post the image files in the API endpoint using requests module
 dir = os.getcwd()+"/supplier-data/images"
 url = "http://localhost/upload/"
 for file in os.listdir(dir):
